@@ -1,0 +1,147 @@
+<!-- this page is home file used to display all contents required  -->
+
+{% extends 'base.html' %} <!-- we inherit the base page into home page -->
+
+<!-- we add title into block title -->
+{% block title %} 
+     home page
+{%  endblock title %}
+
+<!-- we add contents into block content -->
+{% block content %}
+         <!-- smart watches sections  -->
+         <div class="container">
+              <div class="row mt-3 mb-3">
+               <div class="container">
+               
+               {% if watches %}     
+               <h5 class="m-2 p-3 bg-infos">Smart watches
+                    {% if watchesdisc %} 
+                    <span>{{watchesdisc}} % off</span>
+                    {% endif %}
+                </h5>
+                {% endif %}
+               </div>
+               {% if watches %}
+               {% for w in watches %}
+                   <div class="col ">
+                          <div class="container">           
+                               <div class="items-product">
+                                <div class="header-title">
+                                    <div class="item-list">
+                                        {{ w.get('name')}}
+                                    </div>
+                                    <div class="item-list item-list-right">
+                                        {{ w.get('price')}}
+                                    </div>
+                               </div>
+                              
+                               <div class="description">
+                                   {{ w.get('description')}}
+                                     <center>
+                                        <button type="submit" class="cart">buy now </button> 
+                                     </center> 
+                               </div>
+                               </div>
+                             
+                          </div>
+                          
+                   </div>
+                   {% endfor %}
+                   
+                   {% endif %}
+               </div>
+         </div>
+
+
+         <!-- smart tvs sections  -->
+         <div class="container">
+          <div class="row mt-3 mb-3">
+               <div class="container">
+                    {% if tvs %}   
+                    <h5 class="m-2 p-3 bg-infos">Smart tvs 
+                         {% if tvsdisc %} 
+                         <span>{{tvsdisc}} % off</span>
+                         {% endif %}
+                     </h5>
+                     {% endif %}
+               </div>
+           {% if tvs %}
+           {% for t in tvs %}
+               <div class="col ">
+              
+                      <div class="container">
+                           
+                           <div class="items-product">
+                            
+                            <div class="header-title">
+                                <div class="item-list">
+                                    {{ t.get('name')}}
+                                </div>
+                                <div class="item-list item-list-right">
+                                    {{ t.get('price')}}
+                                </div>
+                           </div>
+                          
+                           <div class="description">
+                               {{ t.get('description')}}
+                                 <center>
+                                   <button type="submit" class="cart">buy now </button> 
+                                 </center> 
+                           </div>
+                           </div>
+                         
+                      </div>
+                      
+               </div>
+               {% endfor %}
+               {% endif %}
+           </div>
+          </div>
+
+
+          <!-- smart phones sections  -->
+         <div class="container">
+          <div class="row mt-3 mb-3">
+               <div class="container">
+                    {% if phones %}
+                    <h5 class="m-2 p-3 bg-infos">Smart phones
+                         {% if phonesdisc %} 
+                         <span>{{phonesdisc}} % off</span>
+                         {% endif %}
+                          </h5> 
+                    {% endif %}
+                    </div>
+           {% if phones %}
+           {% for p in phones %}
+               <div class="col ">
+              
+                      <div class="container">
+                           
+                           <div class="items-product">
+                            
+                            <div class="header-title">
+                                <div class="item-list">
+                                    {{ p.get('name')}}
+                                </div>
+                                <div class="item-list item-list-right">
+                                    {{ p.get('price')}}
+                                </div>
+                           </div>
+                          
+                           <div class="description">
+                               {{ p.get('description')}}
+                                 <center>
+                                   <button type="submit" class="cart">buy now </button> 
+                                 </center> 
+                           </div>
+                           </div>
+                         
+                      </div>
+                      
+               </div>
+               {% endfor %}
+               {% endif %}
+           </div>
+          </div>
+{% endblock content%}

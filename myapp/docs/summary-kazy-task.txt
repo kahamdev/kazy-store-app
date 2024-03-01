@@ -1,0 +1,8 @@
+fiction e-commerce : Kazy
+database : TechMart database
+api : Kazy API
+schema for product info : name,description,price and category
+feature finctionality : search feature
+web interface : flask or django
+responsiveness : accross different devices
+github : share repository of source code along with URL to the API documentation and the URL to the web interface
